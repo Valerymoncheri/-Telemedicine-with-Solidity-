@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.4 <0.7.0;
+pragma solidity >=0.7.0 <0.8.0;
 pragma experimental ABIEncoderV2;
 import "./OperacionesBasicas.sol";
 import "./ERC20.sol";
@@ -76,7 +76,6 @@ contract InsuranceFactory is OperacionesBasicas{
         
         // Restricciones para que unicamente se ejecuten funciones por la compañia de seguros
         modifier UnicamenteAseguradora(address _direccionAsseguradora){
-            // Es requreix que l'adreça de l'asseguradora sigui l'unicada autoritzada
             require (Aseguradora == _direccionAsseguradora, "Direccion no autorizada.");
             _;
         }
